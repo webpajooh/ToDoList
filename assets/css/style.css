@@ -1,0 +1,157 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video{margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section{display:block;}
+body{line-height: 1;}
+ol, ul{list-style: none;}
+blockquote, q{quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after{content: '';content: none;}
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+@font-face{font-family:'FShabnam';src:url('../font/Shabnam-FD.woff') format('woff'),url('../font/Shabnam-FD.ttf') format('truetype');}
+@font-face{font-family:'FShabnamB';src:url('../font/Shabnam-Bold-FD.woff') format('woff'),url('../font/Shabnam-Bold-FD.ttf') format('truetype');}
+::selection{background:#333; color:#fff;}
+::selection{background:#333; color:#fff;}
+::-moz-selection{background:#333; color:#fff;}
+a{text-decoration:none !important;} a:hover{text-decoration:none !important;} a:active{text-decoration:none !important;}
+/* My Materialize */
+.input:focus{
+    border-bottom:1px solid #880e4f !important;
+    box-shadow:0 1px 0 0 #880e4f!important;
+}
+.input::placeholder{
+    color:#666 !important;
+}
+.collection{
+    border-radius:4px !important;
+    margin-top:-3px;
+}
+a.collection-item{
+    font:18px "FShabnam";
+    color:#333 !important;
+}
+.collection-item:focus{
+    background:#880e4f !important;
+    color:#fff !important;
+}
+.toast{
+    font:17px 'FShabnam' !important;
+    right:0;
+    left:0;
+}
+
+
+/* Common Codes */
+body{
+    direction:rtl;
+}
+#tdlToolbar{
+    width:100%;
+    height:55px;
+    background:#880e4f;
+}
+#logo{
+    float:left;
+    color:#fff;
+    font:26px bold Tahoma;
+    margin-top:7px;
+}
+#tdlToolbarButtons{
+    float:right;
+}
+#saveTasks{
+    color:#fff;
+    font:20px Tahoma;
+    border:1px solid #880e4f;
+    border-radius:4px;
+    padding:5px 15px 8px 15px;
+    margin-top:7px;
+}
+#saveTasks:hover{
+    background:#fff;
+    color:#880e4f;
+}
+#content{
+    margin:35px 0 0 0;
+}
+.contentTitle{
+    float:right;
+    font:22px "FShabnamB";
+}
+#addTask{
+    float:left;
+    margin-top:-4px;
+}
+.tdlBtn{
+    font:18px "FShabnam";
+    background:#eee;
+    border-radius:3px;
+    padding:7px 13px 7px 13px;
+    text-align:center;
+}
+.tdlBtn:hover{
+    background-color:#880e4f;
+    color:#fff;
+}
+#addTaskForm, #removeTaskForm{
+    display:none;
+    width:100%;
+    border:1px solid #e0e0e0;
+    border-radius:4px;
+}
+.addTaskFormInner, .removeTaskFormInner{
+    padding:10px 20px;
+}
+#taskNameInput{
+    margin-left:5px;
+}
+.addTaskSubmit{
+    float:left;
+    margin-top:12px;
+}
+.addTaskNote{
+    color:#880e4f;
+    font:16px 'FShabnam';
+    margin-top:12px;
+}
+.emptyList{
+    color:#880E4F;
+    font:20px 'FShabnam';
+    text-align:center;
+    margin:15px 0 15px;
+}
+.collection-item{
+    display:block;
+    font:19px 'FShabnam';
+    transition:.25s;
+}
+.collection-item:hover{
+    background:#e0e0e0 !important;
+}
+.collection-item:active{
+    background:#880e4f !important;
+    color:#fff;
+}
+.removeTaskQuestion{
+    font:18px 'FShabnam';
+    margin:5px 0 15px 0;
+}
+.aboutText{
+    font:16px 'FShabnam';
+    margin-top:15px;
+}
+.aboutText a{color:#880e4f;}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fa-IR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ToDoList</title>
+    <meta name="description" content="کارهای روزمره‌ی خود را به آسانی مدیریت کنید!"/>
+    <meta name="author" content="WebPajooh">
+    <link rel="stylesheet" href="./assets/css/materialize.css" type="text/css"/>
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css"/>
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/materialize.js"></script>
+    <script src="./assets/js/script.js"></script>
+</head>
+<body>
+    <div id="tdlToolbar">
+        <div class="container">
+            <div id="tdlToolbarButtons"><div id="saveTasks" class="waves-effect waves-dark">Save</div></div>
+            <a href="index.html"><h1 id="logo">ToDoList</h1></a>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col s4">
+                    <div id="addTask" class="addTask tdlBtn waves-effect waves-light">کار جدید</div>
+                </div>
+                <div class="col s8">
+                    <h2 class="contentTitle">لیست کارهای روزمره</h2>
+                </div>
+            </div>
+            <div id="taskList" class="collection"></div>
+            <div id="addTaskForm">
+                <div class="addTaskFormInner">
+                    <input id="taskNameInput" type="text" class="input input-field inline" placeholder="عنوان کار را وارد کنید" style="width:72%;">
+                    <div id="addTaskSubmit" class="tdlBtn inline waves-effect waves-light" style="width:24%;">افزودن</div>
+                    <p class="addTaskNote">توجه: اطلاعات وارد شده تنها نزد شما ذخیره شده و چیزی از آن به ما نمی‌رسد!</p>
+                </div>
+            </div>
+            <div id="removeTaskForm">
+                <div class="removeTaskFormInner">
+                    <p class="removeTaskQuestion">آیا مایل به حذف این مورد هستید؟</p>
+                    <div id="removeAccept" class="tdlBtn waves-effect waves-light">تأیید</div>
+                    <input type="hidden" id="itemForRemove">
+                </div>
+            </div>
+            <center><h4 class="aboutText">طراحی و کدنویسی: <a href="https://github.com/webpajooh/" title="WebPajooh">وب‌پژوه</a></h4></center>
+        </div>
+    </div>
+</body>
+</html>
