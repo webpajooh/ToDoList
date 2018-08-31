@@ -30,12 +30,13 @@
                     <h2 class="contentTitle">لیست کارهای روزمره</h2>
                 </div>
             </div>
+            <div id="updownCol"></div>
             <div id="taskList" class="collection"></div>
             <div id="addTaskForm">
                 <div class="addTaskFormInner">
                     <input id="taskNameInput" type="text" class="input input-field inline" placeholder="عنوان کار را وارد کنید" style="width:72%;">
                     <div id="addTaskSubmit" class="tdlBtn inline waves-effect waves-light" style="width:24%;">افزودن</div>
-                    <p class="addTaskNote">توجه: اطلاعات وارد شده تنها نزد شما ذخیره شده و چیزی از آن به ما نمی‌رسد!</p>
+                    <p class="addTaskNote">توجه: اطلاعات وارد شده تنها نزد شما ذخیره شده و چیزی از آن به ما نمی‌رسد!<br>توجه: در صورت اضافه، تا زمانی‌که دکمه‌ی Save را نزنید، قادر به جابه‌جایی نخواهید بود!</p>
                 </div>
             </div>
             <div id="removeTaskForm">
@@ -43,6 +44,7 @@
                     <p class="removeTaskQuestion">آیا مایل به حذف این مورد هستید؟</p>
                     <div id="removeAccept" class="tdlBtn waves-effect waves-light">تأیید</div>
                     <input type="hidden" id="itemForRemove">
+                    <p class="addTaskNote">توجه: در صورت حذف، تا زمانی‌که دکمه‌ی Save را نزنید، قادر به جابه‌جایی نخواهید بود!</p>
                 </div>
             </div>
             <center><h4 class="aboutText">طراحی و کدنویسی: <a href="https://github.com/webpajooh/" title="WebPajooh">وب‌پژوه</a></h4></center>
