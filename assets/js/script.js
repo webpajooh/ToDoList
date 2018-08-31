@@ -6,13 +6,22 @@ function getCookie(cname){var name = cname + "="; var decodedCookie = decodeURIC
 function cleanArray(actual){var newArray = new Array(); for (var i = 0; i < actual.length; i++) {if (actual[i]) {newArray.push(actual[i]);}}return newArray;}
 
 function loadTasksList(){
+    $('#taskList, #updownCol').html('');
     if (getCookie('tdl')==''){
         $('#taskList').html('<div class="emptyList">لیست خالی است!</div>');
     }else{
         tasksArray = JSON.parse(getCookie('tdl'));
         var i=0;
         while(tasksArray[i]){
-            $('#taskList').append('<div class="collection-item waves-effect waves-light" item="'+i+'" onclick="removeTaskBox('+i+');">'+tasksArray[i]+'</div>');
+            $('#taskList').append('<div class="collection-item waves-effect waves-light" item="'+i+'" onclick="removeTaskBox('+i+');">'+tasksArray[i]+'<div class="shDown"></div></div>');
+            $('#updownCol').append('<div class="updownBox" item="'+i+'"></div>');
+            if (i==tasksArray.length-1){ // UpDown Buttons
+                $(".updownBox[item="+i+"]").html('<div class="goUp" onclick="goUp('+i+');"></div>');
+            }else if(i==0){
+                $(".updownBox[item="+i+"]").html('<div class="goDown" onclick="goDown('+i+');"></div>');
+            }else{
+                $(".updownBox[item="+i+"]").html('<div class="goUp" onclick="goUp('+i+');"></div><div class="goDown" onclick="goDown('+i+');"></div>');
+            }
             i++;
         }
     }
@@ -39,11 +48,36 @@ function removeTaskBox(id){
 }
 function removeTask(id){
     $(".collection-item[item="+id+"]").remove();
-    //tasksArray.splice(id, 1);
     delete tasksArray[id];
     if ($('#taskList').text().length==0){
         $('#taskList').html('<div class="emptyList">لیست خالی است!</div>');
     }
+}
+
+function goDown(id){
+    // List goDown
+    var tmp = tasksArray[id+1];
+    tasksArray[id+1] = tasksArray[id];
+    tasksArray[id] = tmp;
+    var current = $(".collection-item[item="+id+"]");
+    var next = current.next('div');
+    current.insertAfter(next);
+    saveTasks();
+    M.toast({html: 'جابه‌جا شد!'});
+    loadTasksList();
+}
+
+function goUp(id){
+    // List goUp
+    var tmp = tasksArray[id-1];
+    tasksArray[id-1] = tasksArray[id];
+    tasksArray[id] = tmp;
+    var current = $(".collection-item[item="+id+"]");
+    var prev = current.prev('div');
+    current.insertBefore(prev);
+    saveTasks();
+    M.toast({html: 'جابه‌جا شد!'});
+    loadTasksList();
 }
 
 function saveTasks(){
@@ -96,6 +130,7 @@ $(document).ready(function(){
             M.toast({html: 'باید عنوانی را وارد کنید!'});
             $('#taskNameInput').val('');
         }
+        $('#updownCol').html('');
     });
 
     $('#removeAccept').click(function(){
@@ -105,10 +140,12 @@ $(document).ready(function(){
         $('#addTask').html('کار جدید');
         addFormToggle = false;
         M.toast({html: 'حذف با موفقیت انجام شد!'});
+        $('#updownCol').html('');
     });
 
     $('#saveTasks').click(function(){
         saveTasks();
+        loadTasksList();
         M.toast({html: 'کارهای شما ذخیره شد!'});
     });
 });
