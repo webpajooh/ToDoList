@@ -146,6 +146,30 @@ body{
     background:#880e4f !important;
     color:#fff;
 }
+#updownCol{
+    position:absolute;
+    margin-right:-35px;
+}
+.updownBox{
+    height:45px;
+    padding:4px 0 4px 0;
+    opacity:.45;
+    transition:.3s;
+}
+.updownBox:hover{
+    opacity:1;
+}
+.goUp, .goDown{
+    width:16px;
+    height:16px;
+    cursor:pointer;
+}
+.goUp{
+    background:url("../img/goup.png") no-repeat;
+}
+.goDown{
+    background:url("../img/godown.png") no-repeat;
+}
 .removeTaskQuestion{
     font:18px 'FShabnam';
     margin:5px 0 15px 0;
