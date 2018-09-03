@@ -11,6 +11,7 @@ function loadTasksList(){
         $('#taskList').html('<div class="emptyList">لیست خالی است!</div>');
     }else{
         tasksArray = JSON.parse(getCookie('tdl'));
+        if (tasksArray.length==1){$('#updownCol').hide();}
         var i=0;
         while(tasksArray[i]){
             $('#taskList').append('<div class="collection-item waves-effect waves-light" item="'+i+'" onclick="removeTaskBox('+i+');">'+tasksArray[i]+'<div class="shDown"></div></div>');
@@ -45,6 +46,7 @@ function removeTaskBox(id){
     var newTitle = 'حذف "'+tasksArray[id]+'"';
     viewPage('#taskList', '#removeTaskForm', newTitle);
     $('#itemForRemove').val(id);
+    $('#updownCol').fadeOut(300);
 }
 function removeTask(id){
     $(".collection-item[item="+id+"]").remove();
@@ -101,11 +103,13 @@ $(document).ready(function(){
             viewPage('#taskList', '#addTaskForm', 'افزودن کار جدید!');
             $('#addTask').html('لغو کردن');
             $('#taskNameInput').focus();
+            $('#updownCol').fadeOut(300);
         }else{
             addFormToggle = false;
             viewPage('#addTaskForm', '#taskList', 'لیست کارهای روزمره');
             $('#addTask').html('کار جدید');
             $('#removeTaskForm').hide();
+            $('#updownCol').fadeIn(300);
         }
     });
 
@@ -125,6 +129,7 @@ $(document).ready(function(){
             $('#taskNameInput').val('');
             $('#addTask').html('کار جدید');
             viewPage('#addTaskForm', '#taskList', 'لیست کارهای روزمره');
+            $('#updownCol').fadeIn(300);
             addFormToggle=false;
         }else{
             M.toast({html: 'باید عنوانی را وارد کنید!'});
