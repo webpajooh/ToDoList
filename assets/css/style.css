@@ -117,6 +117,7 @@ body{
     padding:10px 20px;
 }
 #taskNameInput{
+    font: 16px 'FShabnam';
     margin-left:5px;
 }
 .addTaskSubmit{
