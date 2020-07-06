@@ -1,16 +1,16 @@
 const staticCacheName = "site-static-v1";
 const cacheAssets = [
-  "/",
-  "/index.html",
-  "/assets/css/style.css",
-  "/assets/js/jquery.js",
-  "/assets/js/script.js",
-  "/assets/img/godown.png",
-  "/assets/img/goup.png",
-  "/assets/font/Shabnam-FD.ttf",
-  "/assets/font/Shabnam-FD.woff",
-  "/assets/font/Shabnam-Bold-FD.ttf",
-  "/assets/font/Shabnam-Bold-FD.woff"
+  "./",
+  "./index.html",
+  "./assets/css/style.css",
+  "./assets/js/jquery.js",
+  "./assets/js/script.js",
+  "./assets/img/godown.png",
+  "./assets/img/goup.png",
+  "./assets/font/Shabnam-FD.ttf",
+  "./assets/font/Shabnam-FD.woff",
+  "./assets/font/Shabnam-Bold-FD.ttf",
+  "./assets/font/Shabnam-Bold-FD.woff"
 ];
 
 self.addEventListener("install", evt => {

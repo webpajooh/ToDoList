@@ -5,6 +5,17 @@ function setCookie(cname, cvalue, exdays){var d = new Date(); d.setTime(d.getTim
 function getCookie(cname){var name = cname + "="; var decodedCookie = decodeURIComponent(document.cookie); var ca = decodedCookie.split(';'); for(var i = 0; i <ca.length; i++) {var c = ca[i]; while (c.charAt(0) == ' ') {c = c.substring(1);}if (c.indexOf(name) == 0) {return c.substring(name.length, c.length);}}return "";}
 function cleanArray(actual){var newArray = new Array(); for (var i = 0; i < actual.length; i++) {if (actual[i]) {newArray.push(actual[i]);}}return newArray;}
 
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+    .register("./serviceworker.js")
+    .then(reg => {
+        console.log("Service worker registred successfully", reg);
+    })
+    .catch(err => {
+        console.log("service worker not registred !!", err);
+    });
+}
+
 function loadTasksList(){
     $('#taskList, #updownCol').html('');
     if (getCookie('tdl')==''){
@@ -95,17 +106,6 @@ function viewPage(currentPageID, newPageID, title){
 }
 
 $(document).ready(function(){
-    if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-        .register("/serviceworker.js")
-        .then(reg => {
-            console.log("Service worker registred successfully", reg);
-        })
-        .catch(err => {
-            console.log("service worker not registred !!", err);
-        });
-    }
-
     loadTasksList();
 
     $('#addTask').click(function(){

@@ -1,24 +1,24 @@
 {
   "name": "TodoList",
   "short_name": "Todo",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#880e4f",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/assets/img/icon-72x72.png",
+      "src": "./assets/img/icon-72x72.png",
       "type": "image/png",
       "sizes": "72x72"
     },
     {
-      "src": "/assets/img/icon-192x192.png",
+      "src": "./assets/img/icon-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/assets/img/icon-512x512.png",
+      "src": "./assets/img/icon-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
