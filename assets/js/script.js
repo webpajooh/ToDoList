@@ -95,6 +95,17 @@ function viewPage(currentPageID, newPageID, title){
 }
 
 $(document).ready(function(){
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+        .register("/serviceworker.js")
+        .then(reg => {
+            console.log("Service worker registred successfully", reg);
+        })
+        .catch(err => {
+            console.log("service worker not registred !!", err);
+        });
+    }
+
     loadTasksList();
 
     $('#addTask').click(function(){
