@@ -81,8 +81,9 @@ body{
 #logo{
     float:left;
     color:#fff;
-    font:26px bold Tahoma;
-    margin-top:7px;
+    font-size:26px;
+    font-weight:bold;
+    margin-top:15px !important;
 }
 #tdlToolbarButtons{
     float:right;
